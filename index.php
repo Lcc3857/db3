@@ -1,4 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php require_once('Connections/SQLmy.php'); ?>
+<?php
+mysql_select_db($database_SQLmy, $SQLmy);
+$query_IndexRecordset = "SELECT * FROM db3";
+$IndexRecordset = mysql_query($query_IndexRecordset, $SQLmy) or die(mysql_error());
+$row_IndexRecordset = mysql_fetch_assoc($IndexRecordset);
+$totalRows_IndexRecordset = mysql_num_rows($IndexRecordset);
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -29,3 +36,6 @@
 
 </body>
 </html>
+<?php
+mysql_free_result($IndexRecordset);
+?>
