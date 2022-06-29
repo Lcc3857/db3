@@ -70,14 +70,22 @@ $queryString_IndexRecordset = sprintf("&totalRows_IndexRecordset=%d%s", $totalRo
   <?php } while ($row_IndexRecordset = mysql_fetch_assoc($IndexRecordset)); ?>
   
   <tr>
-    <td><a href="<?php printf("%s?pageNum_IndexRecordset=%d%s", $currentPage, 0, $queryString_IndexRecordset); ?>">第一頁</a></td>
+    <td><?php if ($pageNum_IndexRecordset > 0) { // Show if not first page ?>
+        <a href="<?php printf("%s?pageNum_IndexRecordset=%d%s", $currentPage, 0, $queryString_IndexRecordset); ?>">第一頁</a>
+        <?php } // Show if not first page ?></td>
     <td>
-	  <a href="<?php printf("%s?pageNum_IndexRecordset=%d%s", $currentPage, max(0, $pageNum_IndexRecordset - 1), $queryString_IndexRecordset); ?>">上一頁</a>
+	  <?php if ($pageNum_IndexRecordset > 0) { // Show if not first page ?>
+        <a href="<?php printf("%s?pageNum_IndexRecordset=%d%s", $currentPage, max(0, $pageNum_IndexRecordset - 1), $queryString_IndexRecordset); ?>">上一頁</a>
+        <?php } // Show if not first page ?>
 	</td>
     <td>
-	  <a href="<?php printf("%s?pageNum_IndexRecordset=%d%s", $currentPage, min($totalPages_IndexRecordset, $pageNum_IndexRecordset + 1),                   $queryString_IndexRecordset); ?>">下一頁</a>
+	  <?php if ($pageNum_IndexRecordset < $totalPages_IndexRecordset) { // Show if not last page ?>
+        <a href="<?php printf("%s?pageNum_IndexRecordset=%d%s", $currentPage, min($totalPages_IndexRecordset, $pageNum_IndexRecordset + 1),                   $queryString_IndexRecordset); ?>">下一頁</a>
+        <?php } // Show if not last page ?>
 	</td>
-    <td><a href="<?php printf("%s?pageNum_IndexRecordset=%d%s", $currentPage, $totalPages_IndexRecordset, $queryString_IndexRecordset); ?>">最後頁</a></td>
+    <td><?php if ($pageNum_IndexRecordset < $totalPages_IndexRecordset) { // Show if not last page ?>
+        <a href="<?php printf("%s?pageNum_IndexRecordset=%d%s", $currentPage, $totalPages_IndexRecordset, $queryString_IndexRecordset); ?>">最後頁</a>
+        <?php } // Show if not last page ?></td>
   </tr>
 </table>
 
