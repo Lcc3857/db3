@@ -17,24 +17,26 @@ $totalRows_detailRecordset = mysql_num_rows($detailRecordset);
 </head>
 
 <body>
-<table width="100" border="1" cellspacing="1" cellpadding="1">
+<form name="form1">
+<table width="100" border="1" cellspacing="1" cellpadding="1" align="center">
   <tr>
     <td>ID</td>
-    <td>&nbsp;</td>
+    <td>Name</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><input type="text" name="" value="" /></td>
-    <td><input type="text" name="" value="" /></td>
-    <td><input type="text" name="" value="" /></td>
-    <td><input type="text" name="" value="" /></td>
+    <td><input type="text" name="ID" value="<?php echo $row_detailRecordset['ID']; ?>" readonly="true"/></td>
+    <td><input type="text" name="Name" value="<?php echo $row_detailRecordset['Name']; ?>" /></td>
+    <td><input type="text" name="Old" value="<?php echo $row_detailRecordset['Old']; ?>" /></td>
+    <td><input type="text" name="Addr" value="<?php echo $row_detailRecordset['Addr']; ?>" /></td>
   </tr>
   <tr>
     <td><input type="submit" name="" value="更新" /></td>
     <td>刪除</td>
   </tr>
 </table>
+</form>
 
 </body>
 </html>
