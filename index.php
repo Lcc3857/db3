@@ -65,7 +65,7 @@ $queryString_IndexRecordset = sprintf("&totalRows_IndexRecordset=%d%s", $totalRo
   <?php do { ?>
   <tr>
     <td><?php echo $row_IndexRecordset['ID']; ?></td>
-    <td><?php echo $row_IndexRecordset['Name']; ?></td>
+    <td><a href="detail.php?id=<?php echo $row_IndexRecordset['ID']; ?>"><?php echo $row_IndexRecordset['Name']; ?></a></td>
     <td><?php echo $row_IndexRecordset['Old']; ?></td>
     <td><?php echo $row_IndexRecordset['Addr']; ?></td>
   </tr>
