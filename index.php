@@ -30,7 +30,7 @@ $totalPages_IndexRecordset = ceil($totalRows_IndexRecordset/$maxRows_IndexRecord
 <body>
 <table border="1" cellspacing="1" cellpadding="1" align="center" style="margin-top: 58px">
   <tr>
-    <td colspan="4" align="right">新增</td>
+    <td colspan="4" align="right"><a href="add.php">新增</a></td>
   </tr>
   <tr>
     <td colspan="4">從x~y共z筆</td>
