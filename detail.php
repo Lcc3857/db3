@@ -81,7 +81,7 @@ $totalRows_detailRecordset = mysql_num_rows($detailRecordset);
   </tr>
   <tr>
     <td colspan="2"><input type="submit" name="" value="更新" /></td>
-    <td colspan="2">刪除</td>
+    <td colspan="2"><a href="del.php?id=<?php echo $row_detailRecordset['ID']; ?>" onclick="return confirm('確定del')">刪除</a></td>
   </tr>
 </table>
 <input type="hidden" name="MM_update" value="form1">
