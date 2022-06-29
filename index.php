@@ -51,7 +51,9 @@ $queryString_IndexRecordset = sprintf("&totalRows_IndexRecordset=%d%s", $totalRo
     <td colspan="4" align="right"><a href="add.php">新增</a></td>
   </tr>
   <tr>
-    <td colspan="4">從x~y共z筆</td>
+    <td colspan="4">從<?php echo ($startRow_IndexRecordset + 1) ?> ~ 
+					<?php echo min($startRow_IndexRecordset + $maxRows_IndexRecordset, $totalRows_IndexRecordset) ?> 
+					共 <?php echo $totalRows_IndexRecordset ?> 筆</td>
   </tr>
   <tr>
     <td>ID</td>
